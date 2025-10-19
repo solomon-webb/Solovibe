@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Auth System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+    }
+    button {
+      background-color: #6200ea;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3700b3;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: blue;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 10px;
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+    hr {
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Register</h2>
+  <input type="text" id="reg-username" placeholder="Username" required>
+  <input type="email" id="reg-email" placeholder="Email" required>
+  <input type="password" id="reg-password" placeholder="Password" required>
+  <button id="register-btn">Register</button>
+
+  <hr>
+
+  <h2>Login</h2>
+  <input type="text" id="login-username" placeholder="Username" required>
+  <input type="password" id="login-password" placeholder="Password" required>
+  <button id="login-btn">Login</button>
+  <a id="forgot-password">Forgot Password?</a>
+
+  <div class="message" id="message"></div>
+
+  <script>
+    const message = document.getElementById("message");
+
+    function showMessage(text, isError = true) {
+      message.textContent = text;
+      message.className = isError ? "message" : "message success";
+    }
+
+    document.getElementById("register-btn").addEventListener("click", () => {
+      const username = document.getElementById("reg-username").value.trim();
+      const email = document.getElementById("reg-email").value.trim();
+      const password = document.getElementById("reg-password").value;
+
+      if (!username || !email || !password) {
+        showMessage("Please fill all registration fields.");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (users[username]) {
+        showMessage("Username already exists.");
+        return;
+      }
+
+      users[username] = { email, password };
+      localStorage.setItem("users", JSON.stringify(users));
+      showMessage("Registration successful!", false);
+
+      document.getElementById("reg-username").value = "";
+      document.getElementById("reg-email").value = "";
+      document.getElementById("reg-password").value = "";
+    });
+
+    document.getElementById("login-btn").addEventListener("click", () => {
+      const username = document.getElementById("login-username").value.trim();
+      const password = document.getElementById("login-password").value;
+
+      let users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (users[username] && users[username].password === password) {
+        showMessage(Welcome, ${username}!, false);
+      } else {
+        showMessage("Invalid username or password.");
+      }
+    });
+
+    document.getElementById("forgot-password").addEventListener("click", () => {
+      const username = prompt("Enter your username:");
+      let users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (users[username]) {
+        alert("Your password is: " + users[username].password);
+      } else {
+        showMessage("Username not found.");
+      }
+    });
+  </script>
+
+</body>
+</html>

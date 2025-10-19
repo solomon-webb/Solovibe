@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SoloVibe</title>
+   <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
+ <meta name="author" content="Towolawi Solomon">
+ <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
+   <meta name="og:image" content="IMG-20251007-WA0080 (1).jpg">
+ <meta property="og:site_name" content="SoloVibe"/>
+ <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+   <!--Login-->
+    <div class="wrapper Register" id="Register">
+         <form action="" onsubmit="return Formnovalidate()">
+        <div class="heeader">
+            <h1>Join Us Today</h1>
+            <p>Start Your Journey With SoloVibe </p>
+        </div>
+         <div class="input-section">
+              <label for="email" class="label">Email</label>
+              <input type="email" name="" id="email"  placeholder="you@gmail.com" class="input-field mail" required >
+               <i class="fa fa-envelope"></i>
+        </div>
+        <div class="input-section">
+              <label for="Usern" class="label">Username</label>
+              <input type="text" name="" id="Usern"  placeholder="Enter Your Username" class="input-field" required>
+               <i class="fa fa-user"></i>
+        </div>
+          <div class="input-section">
+              <label for="psw"  class="label">Password</label>
+              <input type="password" name="" placeholder="Enter Your Password" id="psw" class="input-field"   required accesskey="a" >
+               <i class="fa fa-lock"></i>
+                <span class="fa fa-eye-slash" id="toggleIcon" onclick="toggleVisibilty()"></span>  
+        </div>
+      
+        <div class="submit-button">
+            <input type="submit" value="Join" class="submit">
+        </div>
+         <div id="errormessage"   style="color: red;"></div>
+     <div class="login-link">
+       <p>Already have an account?</p> <a href="index.html">Login here</a>
+     </div>
+ </form>
+    </div>
+    <script>
+        function Formnovalidate() {
+        const email = document.getElementById("email").value.trim();
+        const Usern = document.getElementById("Usern").value.trim();
+        const password = document.getElementById("psw").value.trim();
+        const error = [];
+
+         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+         if (!emailPattern.test(email)) {
+      error.push("Please Enter a valid email")
+    
+         }
+         if (Usern === "") {
+             error.push("Please Enter Your username")
+         } else if (Usern.length < 3) {
+          error.push("Your username sholud be atleast 3 character long")
+         } 
+
+         const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+         if(!passwordPattern.test(password)) {
+            error.push("Your password should contian numbers and alphabet")
+         }
+        
+     const errordiv = document.getElementById("errormessage");
+     if (error.length> 0) {
+        errordiv.innerHTML = error.join("<br>")
+        return false
+     }
+     errordiv.innerHTML;
+       if (localStorage.getItem(email)) {
+        alert("User already exists!");
+        return false;
+      }
+
+      const user = { Usern, email, password };
+      localStorage.setItem(Usern, JSON.stringify(user));
+      alert(`Welcome ${Usern}! Registration successful! Please login.`);
+      window.location.href = "index.html";
+      return false;
+   
+   window.location.href = "login.html"
+   return false;
+}
+function toggleVisibilty() {
+    const toggleIcon = document.getElementById("toggleIcon");
+   const psw = document.getElementById("psw");
+   toggleIcon.onclick = () => {
+          if(psw.type === `password`)  {
+            psw.type = `text`;
+            toggleIcon.classList.remove(`fa-eye-slash`);
+             toggleIcon.classList.add(`fa-eye`);
+        } else {
+            psw.type = `password`;
+              toggleIcon.classList.add(`fa-eye-slash`);
+             toggleIcon.classList.remove(`fa-eye`);
+        }
+   } 
+   }
+ 
+    </script>
+</body>
+</html>

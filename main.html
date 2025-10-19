@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SoloVibe</title>
+   <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
+ <meta name="author" content="Towolawi Solomon">
+ <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
+   <meta name="og:image" content="IMG-20251007-WA0080 (1).jpg">
+ <meta property="og:site_name" content="SoloVibe"/>
+ <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <div class="logo">
+                <a href="main.html" >
+                      <img src="IMG-20251007-WA0080 (1).jpg" alt="" style="width: 40px;height: auto;">
+                   <h1>SoloVibe</h1>
+                   </a>
+            </div>
+            <div class="nav-link" id="navMenu">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                       <li><a href="service.html">Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu">
+                <i class="fa fa-bars"  onclick="Shownav()"></i>
+            </div>
+        </div>
+</nav>
+<main>
+    <div class="header" id="header">
+        <h2>Welcome to SoloVide <span id="usernameDisplay"></span></h2>
+        <p>You are now logged in</p>
+    </div>
+    <div class="dashboard" >
+        <div class="c">
+        <div class="dashboard-header">
+        <h3>🎶 Start exploring your music space.</h3>
+        </div>
+
+        <div class="link">
+        <p><a href="#">👉 View your performance stats</a></p>
+                <p><a href="#">👉 Join music groups or start one</a></p>
+                        <p><a href="#">👉 Post your latest song or video</a></p>
+                                <p><a href="#">👉 Chat with other musicians</a></p>
+                                </div>
+                                </div>
+                                 <div class="equalizer">
+                                    <span></span>
+                                     <span></span>
+                                      <span></span>
+                                       <span></span>
+                                        <span></span>
+                                      <span></span>
+                                       <span></span>
+                                </div>
+    </div>
+  
+    <div class="search">
+        <div class="search-header">
+        <h4>Search For Music</h4>
+        
+        </div>
+        
+        <div class="input-section">
+            <input type="search" name="#" id="search-box" class="input-field" placeholder="Search for music" required>
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="input-section">
+           <button class="submit" id="search-btn">Search</button>
+           
+        </div>
+        <div class="result">
+            <h5>Search Result</h5>
+            <div id="results"></div>
+            <hr>
+          
+        </div>
+        <div class="result">
+            <h6>Trending Result</h6>
+            <div id="trending"></div>
+            <hr>
+          
+        </div>
+
+</div>
+    
+</main>
+<script>
+    const API_BASE = "https://discoveryprovider.audius.co/v1";
+
+    // Search button
+    document.getElementById("search-btn").addEventListener("click", () => {
+      const query = document.getElementById("search-box").value;
+      if (query.trim() !== "") {
+        searchAudius(query);
+      }
+    });
+
+    // Fetch trending songs on page load
+    window.onload = () => {
+      loadTrending();
+    };
+
+    async function searchAudius(query) {
+      const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=myapp`);
+      const data = await response.json();
+      displayTracks(data.data, "results");
+    }
+
+    async function loadTrending() {
+      const response = await fetch(`${API_BASE}/tracks/trending?app_name=myapp`);
+      const data = await response.json();
+      displayTracks(data.data, "trending");
+    }
+
+    function displayTracks(tracks, containerId) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+
+      if (tracks.length === 0) {
+        container.innerHTML = "<p>No songs found.</p>";
+        return;
+      }
+
+      tracks.forEach(track => {
+        const title = track.title;
+        const artist = track.user ? track.user.name : "Unknown Artist";
+        const artwork = track.artwork ? track.artwork['480x480'] : "https://via.placeholder.com/250";
+        const streamUrl = `${API_BASE}/tracks/${track.id}/stream?app_name=myapp`;
+
+        const trackDiv = document.createElement("div");
+        trackDiv.classList.add("track");
+
+        trackDiv.innerHTML = `
+          <img src="${artwork}" alt="${title}">
+          <h4>${title}</h4>
+          <p>👤 ${artist}</p>
+          <audio controls>
+            <source src="${streamUrl}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <a class="download-btn" href="${streamUrl}" download="${title}.mp3">⬇ Download</a>
+        `;
+
+        container.appendChild(trackDiv);
+      });
+    }
+ 
+</script>
+</body>
+</html>

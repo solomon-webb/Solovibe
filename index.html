@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SoloVibe</title>
+   <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
+ <meta name="author" content="Towolawi Solomon">
+ <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
+   <meta name="og:image" content="IMG-20251007-WA0080 (1).jpg">
+ <meta property="og:site_name" content="SoloVibe"/>
+ <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+   <div class="wrapper login">
+         <form action="" onsubmit="return validateForm()">
+        <div class="heeader">
+            <h1>Welcome Back</h1>
+            <p>Sign in to your SoloVibe account</p>
+        </div>
+        <div class="input-section">
+              <label for="Usern" class="label">Username</label>
+              <input type="text" name="" id="Usern"  placeholder="Enter Your Username" class="input-field" required>
+               <i class="fa fa-user"></i>
+        </div>
+          <div class="input-section">
+              <label for="psw"  class="label">Password</label>
+              <input type="password" name="" placeholder="Enter Your Password" id="psw" class="input-field"  required>
+               <i class="fa fa-lock"></i>
+                <span class="fa fa-eye-slash" id="toggleIcon" onclick="toggleVisibilty()"></span> 
+               
+        </div>
+        <div class="option">
+            <div class="one">
+                <input type="checkbox" name="" id="chk"> <label for="chk">Remember me</label>
+            </div>
+           
+        </div>
+        <div class="submit-button">
+            <input type="submit" value="Login" class="submit">
+        </div>
+        <div id="errormessage"   style="color: red;">
+        </div>
+     <div class="login-link">
+       <p>Don't have an account?</p> <a href="register.html">Register here</a>
+     </div>
+ </form>
+    </div>
+   <script>
+     function validateForm() {
+      event.preventDefault();
+      const username = document.getElementById("Usern").value.trim();
+        const password = document.getElementById("psw").value.trim();
+        const error = [];
+        const remember = document.getElementById("chk").checked;
+         const user = JSON.parse(localStorage.getItem(username));
+
+         if(username.length < 3) {
+   error.push("Your username sholud be atleast 3 character long");
+         }
+         const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+         if(!passwordPattern.test(password)) {
+          error.push("Your password should contian numbers and alphabet, and be at least 8 characters long");
+         }
+            const errordiv = document.getElementById("errormessage");
+      if (error.length> 0) {
+        errordiv.innerHTML = error.join("<br>");
+        return false;
+}
+if (remember) {
+  localStorage.setItem("savedUsername", username); 
+} else {
+  localStorage.removeItem("savedUsername");
+}
+
+     
+      errordiv.innerHTML = "";
+  if (user && user.password === password) {
+        localStorage.setItem("loggedInUser", username);
+          alert("Login successful!");
+       window.location.href = "main.html"
+ document.getElementById("usernameDisplay").innerText = user.username;
+     }else {
+        alert("Invalid email or password.");
+      }
+       return false;
+    }
+   </script>
+</body>
+</html>
