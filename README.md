@@ -5,7 +5,7 @@ A sleek and responsive music website built with HTML, CSS, and JavaScript. Users
 
 🌐 Live Demo
 
-Visit the live website: [https://solomon-webb.github.io/music-website](https://solomon-webb.github.io/music-website)
+Visit the live website:[ [https://solomon-webb.github.io/music-website](https://solomon-webb.github.io/music-website)](https://solomon-webb.github.io/Solovibe/)
 
 ---
 
