@@ -112,23 +112,31 @@
     }
   });
 
-  // Fetch trending songs on page load
+  // Fetch songs by selected artists on page load
   window.onload = () => {
-    loadTrending();
+    loadCustomTrending();
   };
 
   async function searchAudius(query) {
-    const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=myapp`);
+    const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=myapp&limit=20`);
     const data = await response.json();
     displayTracks(data.data, "results");
   }
 
-  async function loadTrending() {
-  const response = await fetch(`${API_BASE}/tracks/trending?app_name=myapp&limit=20`);
-  const data = await response.json();
-  displayTracks(data.data, "trending");
-}
+  // ✅ Custom trending function for selected artists
+  async function loadCustomTrending() {
+    const artists = ["Davido", "Adekunle Gold", "zinoleesky", "Tiwa Savage", "Wizkid"];
+    let allTracks = [];
 
+    for (const artist of artists) {
+      const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(artist)}&app_name=myapp&limit=5`);
+      const data = await response.json();
+      allTracks = allTracks.concat(data.data);
+    }
+
+    // Display combined results (Davido, Adekunle, Simi, Tiwa)
+    displayTracks(allTracks, "trending");
+  }
 
   function displayTracks(tracks, containerId) {
     const container = document.getElementById(containerId);
@@ -162,7 +170,7 @@
       container.appendChild(trackDiv);
     });
 
-   
+    // ✅ Ensure only one song plays at a time
     const audios = container.querySelectorAll("audio");
     audios.forEach(audio => {
       audio.addEventListener("play", () => {
@@ -175,6 +183,7 @@
     });
   }
 </script>
+
 
 </body>
 </html>
