@@ -102,66 +102,79 @@
     
 </main>
 <script>
-    const API_BASE = "https://discoveryprovider.audius.co/v1";
+  const API_BASE = "https://discoveryprovider.audius.co/v1";
 
-    // Search button
-    document.getElementById("search-btn").addEventListener("click", () => {
-      const query = document.getElementById("search-box").value;
-      if (query.trim() !== "") {
-        searchAudius(query);
-      }
+  // Search button
+  document.getElementById("search-btn").addEventListener("click", () => {
+    const query = document.getElementById("search-box").value;
+    if (query.trim() !== "") {
+      searchAudius(query);
+    }
+  });
+
+  // Fetch trending songs on page load
+  window.onload = () => {
+    loadTrending();
+  };
+
+  async function searchAudius(query) {
+    const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=myapp`);
+    const data = await response.json();
+    displayTracks(data.data, "results");
+  }
+
+  async function loadTrending() {
+  const response = await fetch(`${API_BASE}/tracks/trending?app_name=myapp&limit=20`);
+  const data = await response.json();
+  displayTracks(data.data, "trending");
+}
+
+
+  function displayTracks(tracks, containerId) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+
+    if (tracks.length === 0) {
+      container.innerHTML = "<p>No songs found.</p>";
+      return;
+    }
+
+    tracks.forEach(track => {
+      const title = track.title;
+      const artist = track.user ? track.user.name : "Unknown Artist";
+      const artwork = track.artwork ? track.artwork['480x480'] : "https://via.placeholder.com/250";
+      const streamUrl = `${API_BASE}/tracks/${track.id}/stream?app_name=myapp`;
+
+      const trackDiv = document.createElement("div");
+      trackDiv.classList.add("track");
+
+      trackDiv.innerHTML = `
+        <img src="${artwork}" alt="${title}">
+        <h4>${title}</h4>
+        <p>👤 ${artist}</p>
+        <audio controls>
+          <source src="${streamUrl}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <a class="download-btn" href="${streamUrl}" download="${title}.mp3">⬇ Download</a>
+      `;
+
+      container.appendChild(trackDiv);
     });
 
-    // Fetch trending songs on page load
-    window.onload = () => {
-      loadTrending();
-    };
-
-    async function searchAudius(query) {
-      const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=myapp`);
-      const data = await response.json();
-      displayTracks(data.data, "results");
-    }
-
-    async function loadTrending() {
-      const response = await fetch(`${API_BASE}/tracks/trending?app_name=myapp`);
-      const data = await response.json();
-      displayTracks(data.data, "trending");
-    }
-
-    function displayTracks(tracks, containerId) {
-      const container = document.getElementById(containerId);
-      container.innerHTML = "";
-
-      if (tracks.length === 0) {
-        container.innerHTML = "<p>No songs found.</p>";
-        return;
-      }
-
-      tracks.forEach(track => {
-        const title = track.title;
-        const artist = track.user ? track.user.name : "Unknown Artist";
-        const artwork = track.artwork ? track.artwork['480x480'] : "https://via.placeholder.com/250";
-        const streamUrl = `${API_BASE}/tracks/${track.id}/stream?app_name=myapp`;
-
-        const trackDiv = document.createElement("div");
-        trackDiv.classList.add("track");
-
-        trackDiv.innerHTML = `
-          <img src="${artwork}" alt="${title}">
-          <h4>${title}</h4>
-          <p>👤 ${artist}</p>
-          <audio controls>
-            <source src="${streamUrl}" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          <a class="download-btn" href="${streamUrl}" download="${title}.mp3">⬇ Download</a>
-        `;
-
-        container.appendChild(trackDiv);
+   
+    const audios = container.querySelectorAll("audio");
+    audios.forEach(audio => {
+      audio.addEventListener("play", () => {
+        audios.forEach(otherAudio => {
+          if (otherAudio !== audio) {
+            otherAudio.pause();
+          }
+        });
       });
-    }
- 
+    });
+  }
 </script>
+
 </body>
 </html>
