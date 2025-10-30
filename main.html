@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>SoloVibe</title>
    <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
  <meta name="author" content="Towolawi Solomon">
@@ -19,11 +19,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       .fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  visibility: hidden;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+    </style>
 </head>
 
 <body>
     <nav>
-        <div class="nav">
+        <div class="nav fade-in-section">
             <div class="logo">
                 <a href="main.html" >
                       <img src="IMG-20251007-WA0080 (1).jpg" alt="" style="width: 40px;height: auto;">
@@ -33,21 +47,21 @@
             <div class="nav-link" id="navMenu">
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                       <li><a href="service.html">Service</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                       <li><a href="#" onclick="Service()">Service</a></li>
+                        <li><a href="#" onclick="Contact()">Contact</a></li>
                 </ul>
             </div>
             <div class="mobile-menu">
-                <i class="fa fa-bars"  onclick="Shownav()"></i>
+                <i class="fas fa-bars"  onclick="Shownav()"></i>
             </div>
         </div>
 </nav>
 <main>
-    <div class="header" id="header">
+    <div class="header fade-in-section" id="header">
         <h2>Welcome to SoloVide <span id="usernameDisplay"></span></h2>
         <p>You are now logged in</p>
     </div>
-    <div class="dashboard" >
+    <div class="dashboard fade-in-section" >
         <div class="c">
         <div class="dashboard-header">
         <h3>🎶 Start exploring your music space.</h3>
@@ -60,7 +74,7 @@
                                 <p><a href="#">👉 Chat with other musicians</a></p>
                                 </div>
                                 </div>
-                                 <div class="equalizer">
+                                 <div class="equalizer fade-in-section">
                                     <span></span>
                                      <span></span>
                                       <span></span>
@@ -71,13 +85,13 @@
                                 </div>
     </div>
   
-    <div class="search">
+    <div class="search fade-in-section">
         <div class="search-header">
         <h4>Search For Music</h4>
         
         </div>
         
-        <div class="input-section">
+        <div class="input-section fade-in-section">
             <input type="search" name="#" id="search-box" class="input-field" placeholder="Search for music" required>
             <i class="fa fa-search"></i>
         </div>
@@ -85,13 +99,13 @@
            <button class="submit" id="search-btn">Search</button>
            
         </div>
-        <div class="result">
+        <div class="result fade-in-section">
             <h5>Search Result</h5>
             <div id="results"></div>
             <hr>
           
         </div>
-        <div class="result">
+        <div class="result fade-in-section">
             <h6>Trending Result</h6>
             <div id="trending"></div>
             <hr>
@@ -99,91 +113,171 @@
         </div>
 
 </div>
-    
+ <div class="loader fade-in-section" id="loader" style="display: none;" >
+      <div class="load"></div>
+     <h1>Welcome to SoloVibe</h1>
+     <p>Loading Your EXperience</p>
+    </div>
+
+  <footer>
+      <div class="footer-content fade-in-section" >
+        <div class="footer-colum" id="about">
+          <h3>ABOUT SoloVibe</h1>
+    <p>SOLO. Your trusted website where you browse, explore music for free</p>
+    <p>We provide beginner-friendly tutorials and advanced 
+        techniques to help you navigate the world of MUSIC and many more(pending).</p>
+    </div>
+         <div class="footer-colum fade-in-section" id="em">
+                <h3>Connect With Us</h3>
+                <p>Subscribe to our newsletter for the latest guides and updates:</p>
+                <div class="search-container" id="em" style="margin: 1rem 0;">
+                  <form action="https://chat.whatsapp.com/Ejrnyl7oaJTA9uI4jgs9cj?mode=ems_copy_t" method="post"  target="_blank">
+                    <input type="tel" placeholder="+234816516******" name="number" maxlength="13" class="input-field" autocomplete="off" >
+                    <input type="submit" value="Send" class="submit">
+                    </form>
+                   </div>
+                <div class="social-icons fade-in-section">
+                    <div class="tooltip">
+                    <a href="https://www.facebook.com/profile.php?id=61582307954636" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://wa.link/08urey" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://t.me/Timmzzyy"  target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://www.tiktok.com/@solomondamilare18" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+       <div class="copy fade-in-section">
+      <p>&copy; copyright <span id="years"></span> SoloVibe, All rights reserved. Designed By <i class="fa fa-heart" style="color: #fff;"></i> SOLOMON <i class="fa fa-heart" style="color: #fff;"></i> TOWOLAWI <i class="fa fa-heart" style="color: #fff;"></i> and <i class="fa fa-heart" style="color: #fff;"></i> ISREAL(javascript) <i class="fa fa-heart" style="color: #fff;"></i></p>
+      <p>Built with ❤ using HTML, CSS & JavaScript</p>
+       <p>Version 1.0 | <a href="#top" style="color: white; text-decoration: underline;">Back to top ↑</a></p>
+
+       </div>
+    </footer>
+
 </main>
 <script>
-  const API_BASE = "https://discoveryprovider.audius.co/v1";
+const API_BASE = "https://discoveryprovider.audius.co/v1";
 
-  // Search button
-  document.getElementById("search-btn").addEventListener("click", () => {
-    const query = document.getElementById("search-box").value;
-    if (query.trim() !== "") {
-      searchAudius(query);
+// Search button event
+document.getElementById("search-btn").addEventListener("click", async () => {
+  const query = document.getElementById("search-box").value.trim();
+  if (!query) return alert("Please enter a search term");
+
+  const resultsContainer = document.getElementById("results");
+  resultsContainer.innerHTML = "<p>Loading...</p>";
+
+  try {
+    const response = await fetch(
+      `${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=solovibeapp&limit=20`
+    );
+    const data = await response.json();
+
+    if (data.data && data.data.length > 0) {
+      displayTracks(data.data, resultsContainer);
+    } else {
+      resultsContainer.innerHTML = "<p>No songs found.</p>";
     }
+  } catch (error) {
+    console.error("Error fetching search results:", error);
+    resultsContainer.innerHTML = "<p>Something went wrong. Try again later.</p>";
+  }
+});
+
+// Display songs in container
+function displayTracks(tracks, container) {
+  container.innerHTML = "";
+
+  tracks.forEach((track) => {
+    const title = track.title || "Untitled";
+    const artist = track.user?.name || "Unknown Artist";
+    const artwork =
+      track.artwork?.["480x480"] ||
+      track.artwork?.["150x150"] ||
+      "https://via.placeholder.com/250";
+
+    const streamUrl = `${API_BASE}/tracks/${track.id}/stream?app_name=solovibeapp`;
+    const downloadUrl = `${API_BASE}/tracks/${track.id}/stream?app_name=solovibeapp`;
+
+    const trackDiv = document.createElement("div");
+    trackDiv.classList.add("track");
+
+    trackDiv.innerHTML = `
+      <img src="${artwork}" alt="${title}">
+      <h4>${title}</h4>
+      <p>👤 ${artist}</p>
+      <audio controls>
+        <source src="${streamUrl}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <a class="download-btn" href="${downloadUrl}" download="${title}.mp3">⬇ Download</a>
+    `;
+
+    container.appendChild(trackDiv);
   });
 
-  // Fetch songs by selected artists on page load
-  window.onload = () => {
-    loadCustomTrending();
-  };
-
-  async function searchAudius(query) {
-    const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(query)}&app_name=myapp&limit=20`);
-    const data = await response.json();
-    displayTracks(data.data, "results");
-  }
-
-  // ✅ Custom trending function for selected artists
-  async function loadCustomTrending() {
-    const artists = ["zinoleesky", "Davido",  "Adekunle Gold",  "Tiwa Savage", "Wizkid"];
-    let allTracks = [];
-
-    for (const artist of artists) {
-      const response = await fetch(`${API_BASE}/tracks/search?query=${encodeURIComponent(artist)}&app_name=myapp&limit=5`);
-      const data = await response.json();
-      allTracks = allTracks.concat(data.data);
-    }
-
-    // Display combined results (Davido, Adekunle, Simi, Tiwa)
-    displayTracks(allTracks, "trending");
-  }
-
-  function displayTracks(tracks, containerId) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = "";
-
-    if (tracks.length === 0) {
-      container.innerHTML = "<p>No songs found.</p>";
-      return;
-    }
-
-    tracks.forEach(track => {
-      const title = track.title;
-      const artist = track.user ? track.user.name : "Unknown Artist";
-      const artwork = track.artwork ? track.artwork['480x480'] : "https://via.placeholder.com/250";
-      const streamUrl = `${API_BASE}/tracks/${track.id}/stream?app_name=myapp`;
-
-      const trackDiv = document.createElement("div");
-      trackDiv.classList.add("track");
-
-      trackDiv.innerHTML = `
-        <img src="${artwork}" alt="${title}">
-        <h4>${title}</h4>
-        <p>👤 ${artist}</p>
-        <audio controls>
-          <source src="${streamUrl}" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <a class="download-btn" href="${streamUrl}" download="${title}.mp3">⬇ Download</a>
-      `;
-
-      container.appendChild(trackDiv);
-    });
-
-    // ✅ Ensure only one song plays at a time
-    const audios = container.querySelectorAll("audio");
-    audios.forEach(audio => {
-      audio.addEventListener("play", () => {
-        audios.forEach(otherAudio => {
-          if (otherAudio !== audio) {
-            otherAudio.pause();
-          }
-        });
+  // ✅ Only one audio plays at a time
+  const audios = container.querySelectorAll("audio");
+  audios.forEach((audio) => {
+    audio.addEventListener("play", () => {
+      audios.forEach((other) => {
+        if (other !== audio) other.pause();
       });
     });
-  }
-</script>
+  });
+}
 
+// ✅ Custom trending (Zinoleesky, Davido, Adekunle Gold)
+async function loadCustomTrending() {
+  const trendingContainer = document.getElementById("trending");
+  trendingContainer.innerHTML = "<p>Loading trending songs...</p>";
+
+  const artists = ["Zinoleesky", "Davido", "Adekunle Gold"];
+  let allTracks = [];
+  const seenTrackIds = new Set(); // <-- Prevent duplicates
+
+  try {
+    for (const artist of artists) {
+      const response = await fetch(
+        `${API_BASE}/tracks/search?query=${encodeURIComponent(artist)}&app_name=solovibeapp&limit=15`
+      );
+      const data = await response.json();
+
+      // Filter out duplicate songs
+      const uniqueTracks = data.data.filter((track) => {
+        if (seenTrackIds.has(track.id)) return false;
+        seenTrackIds.add(track.id);
+        return true;
+      });
+
+      allTracks = allTracks.concat(uniqueTracks);
+    }
+
+    // ✅ Limit total trending songs to 15 max
+    const limitedTracks = allTracks.slice(0, 20);
+
+    if (limitedTracks.length > 0) {
+      displayTracks(limitedTracks, trendingContainer);
+    } else {
+      trendingContainer.innerHTML = "<p>No trending songs found.</p>";
+    }
+  } catch (error) {
+    console.error("Error fetching custom trending tracks:", error);
+    trendingContainer.innerHTML = "<p>Unable to load trending tracks.</p>";
+  }
+}
+
+// Load trending on page load
+loadCustomTrending();
+
+
+</script>
+<script src="script.js"></script>
 
 </body>
 </html>
