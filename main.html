@@ -19,25 +19,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-       .fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  visibility: hidden;
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
-}
-    </style>
 </head>
 
 <body>
     <nav>
-        <div class="nav fade-in-section">
+        <div class="nav">
             <div class="logo">
                 <a href="main.html" >
                       <img src="IMG-20251007-WA0080 (1).jpg" alt="" style="width: 40px;height: auto;">
@@ -57,11 +43,11 @@
         </div>
 </nav>
 <main>
-    <div class="header fade-in-section" id="header">
+    <div class="header" id="header">
         <h2>Welcome to SoloVide <span id="usernameDisplay"></span></h2>
         <p>You are now logged in</p>
     </div>
-    <div class="dashboard fade-in-section" >
+    <div class="dashboard" >
         <div class="c">
         <div class="dashboard-header">
         <h3>🎶 Start exploring your music space.</h3>
@@ -74,7 +60,7 @@
                                 <p><a href="#">👉 Chat with other musicians</a></p>
                                 </div>
                                 </div>
-                                 <div class="equalizer fade-in-section">
+                                 <div class="equalizer">
                                     <span></span>
                                      <span></span>
                                       <span></span>
@@ -85,13 +71,13 @@
                                 </div>
     </div>
   
-    <div class="search fade-in-section">
+    <div class="search">
         <div class="search-header">
         <h4>Search For Music</h4>
         
         </div>
         
-        <div class="input-section fade-in-section">
+        <div class="input-section">
             <input type="search" name="#" id="search-box" class="input-field" placeholder="Search for music" required>
             <i class="fa fa-search"></i>
         </div>
@@ -99,13 +85,13 @@
            <button class="submit" id="search-btn">Search</button>
            
         </div>
-        <div class="result fade-in-section">
+        <div class="result">
             <h5>Search Result</h5>
             <div id="results"></div>
             <hr>
           
         </div>
-        <div class="result fade-in-section">
+        <div class="result">
             <h6>Trending Result</h6>
             <div id="trending"></div>
             <hr>
@@ -113,21 +99,15 @@
         </div>
 
 </div>
- <div class="loader fade-in-section" id="loader" style="display: none;" >
-      <div class="load"></div>
-     <h1>Welcome to SoloVibe</h1>
-     <p>Loading Your EXperience</p>
-    </div>
-
   <footer>
-      <div class="footer-content fade-in-section" >
+      <div class="footer-content" >
         <div class="footer-colum" id="about">
           <h3>ABOUT SoloVibe</h1>
     <p>SOLO. Your trusted website where you browse, explore music for free</p>
     <p>We provide beginner-friendly tutorials and advanced 
         techniques to help you navigate the world of MUSIC and many more(pending).</p>
     </div>
-         <div class="footer-colum fade-in-section" id="em">
+         <div class="footer-column" id="em">
                 <h3>Connect With Us</h3>
                 <p>Subscribe to our newsletter for the latest guides and updates:</p>
                 <div class="search-container" id="em" style="margin: 1rem 0;">
@@ -136,7 +116,7 @@
                     <input type="submit" value="Send" class="submit">
                     </form>
                    </div>
-                <div class="social-icons fade-in-section">
+                <div class="social-icons">
                     <div class="tooltip">
                     <a href="https://www.facebook.com/profile.php?id=61582307954636" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     
@@ -152,7 +132,7 @@
                 </div>
             </div>
         </div>
-       <div class="copy fade-in-section">
+       <div class="copy">
       <p>&copy; copyright <span id="years"></span> SoloVibe, All rights reserved. Designed By <i class="fa fa-heart" style="color: #fff;"></i> SOLOMON <i class="fa fa-heart" style="color: #fff;"></i> TOWOLAWI <i class="fa fa-heart" style="color: #fff;"></i> and <i class="fa fa-heart" style="color: #fff;"></i> ISREAL(javascript) <i class="fa fa-heart" style="color: #fff;"></i></p>
       <p>Built with ❤ using HTML, CSS & JavaScript</p>
        <p>Version 1.0 | <a href="#top" style="color: white; text-decoration: underline;">Back to top ↑</a></p>
@@ -161,6 +141,11 @@
     </footer>
 
 </main>
+ <div class="loader fade-in-section" id="loader" style="display: none;" >
+      <div class="load"></div>
+     <h1>Welcome to SoloVibe</h1>
+     <p>Loading Your EXperience</p>
+    </div>
 <script>
 const API_BASE = "https://discoveryprovider.audius.co/v1";
 
@@ -277,7 +262,7 @@ loadCustomTrending();
 
 
 </script>
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 </html>
