@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoloVibe</title>
-   <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
- <meta name="author" content="Towolawi Solomon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo. The best and free website for exploring music online. 100% fre😍😎😎🥰🥰😘😛</title>
+  <script src="script.js" defer></script>
+  <link rel="icon" href="IMG-20251007-WA0080 (1).jpg" type="image/png" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
    <meta name="og:image" content="IMG-20251007-WA0080 (1).jpg">
- <meta property="og:site_name" content="SoloVibe"/>
+<meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
+ <meta name="author" content="Towolawi Solomon">
+ <meta property="og:site_name" content="SoloVibe">
  <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-    <link rel="icon" href="Copilot_20250628_195908.png">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
+    <link rel="stylesheet" href="contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
+<style>
+
+  /*  body {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    body.fade-in {
+        opacity: 1;
+    }
+  */
+  .fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  visibility: hidden;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+</style>
 </head>
 <body>
     <nav>
@@ -31,18 +55,18 @@
             </div>
             <div class="nav-link" id="navMenu">
                 <ul>
-                    <li><a href="main.html" >Home</a></li>
-                       <li><a href="service.html">Service</a></li>
+                    <li><a href="#"  onclick="Home()">Home</a></li>
+                       <li><a href="#" onclick="servicer()">Service</a></li>
                         <li><a href="#" class="active">Contact</a></li>
                 </ul>
             </div>
             <div class="mobile-menu">
-                <i class="fa fa-bars" onclick="Shownav()"></i>
+                <i class="fas fa-bars" onclick="Shownav()"></i>
             </div>
         </div>
 </nav>
 <body>
-    <main class="main">
+    <main class="main fade-in-section" >
         <header>
          <h1>  Contact</h1> 
         </header>
@@ -52,13 +76,13 @@
         </p>
         <p class="p">help you navigate the world of MUSIC and many more</p> 
         </section>
-        <article class="article">
+       <article class="article">
             <p class="link"><a href="main.html">Home</a></p>
             <span>/</span>
-            <p><a href="contact.html">Contact</a></p>
+            <p class="default"><a href="service.html">Service</a></p>
         </article>
     </main>
-   <div class="message-section">
+   <div class="message-section  fade-in-section">
             <form  onsubmit="sendToWhatsApp(); return false;">
             <div class="start">
             <h3>Get in touch</h3>
@@ -92,9 +116,9 @@
    
    <div class="container-about" >
        <div class="blog-grid">
-        <article class="card">
+        <article class="card  fade-in-section">
           <div class="container-img">
-                <img src="IMG-20250527-WA0025.jpg" alt="Solomon">       
+                <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="Solomon">       
           </div>
           <div class="container-heading">
               <h4>Solomon Damilare😎</h4>
@@ -113,7 +137,7 @@
                        <a href="https://www.facebook.com/profile.php?id=61582307954636" target="_blank"><i class="fab fa-facebook-f"></i></a>
           </div>
           </article>
-           <article class="card">
+           <article class="card  fade-in-section">
           <div class="container-img">
                 <img src="WhatsApp Image 2025-04-03 at 6.47.50 PM.jpeg" alt="Destiny😎😎">       
           </div>
@@ -134,9 +158,9 @@
                        
           </div>
           </article>
-           <article class="card">
+           <article class="card  fade-in-section">
           <div class="container-img">
-                <img src="1722149734418.jpg" alt="Solomon">       
+                <img src="IMG-20250508-WA0004.jpg" alt="Solomon">       
           </div>
           <div class="container-heading">
               <h4>Ojo Isreal😎😎</h4>
@@ -153,22 +177,62 @@
           
        </div>
         </div>
- 
-<script>
-    function sendToWhatsApp() {
-        const name = document.getElementById("name").value.trim();
-         const email = document.getElementById("email").value.trim();
-          const message = document.getElementById("message").value.trim();
-          const phoneNumber = "2348165164319";
-       const text = `Hello! My name is: ${name} Message: ${message} Email: ${email}`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  <div class="loader fade-in-section" id="loader" style="display: none;" >
+      <div class="load"></div>
+     <h1>Welcome to SoloVibe</h1>
+     <p>Loading Your EXperience</p>
+    </div>
 
-    window.open(url, "_blank");
+ <footer>
+      <div class="footer-content" >
+        <div class="footer-colum" id="about">
+          <h3>ABOUT SoloVibe</h1>
+    <p>SOLO. Your trusted website where you browse, explore music for free</p>
+    <p>We provide beginner-friendly tutorials and advanced 
+        techniques to help you navigate the world of MUSIC and many more(pending).</p>
+    </div>
+         <div class="footer-colum" id="em">
+                <h3>Connect With Us</h3>
+                <p>Subscribe to our newsletter for the latest guides and updates:</p>
+                <div class="search-container" id="em" style="margin: 1rem 0;">
+                  <form action="https://chat.whatsapp.com/Ejrnyl7oaJTA9uI4jgs9cj?mode=ems_copy_t" method="post"  target="_blank">
+                    <input type="tel" placeholder="+234816516******" name="number" maxlength="13" class="input-field" autocomplete="off" >
+                    <input type="submit" value="Send" class="submit">
+                    </form>
+                   </div>
+                <div class="social-icons">
+                    <div class="tooltip">
+                    <a href="https://www.facebook.com/profile.php?id=61582307954636" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://wa.link/08urey" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://t.me/Timmzzyy"  target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://www.tiktok.com/@solomondamilare18" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+       <div class="copy">
+      <p>&copy; copyright <span id="years"></span> SoloVibe, All rights reserved. Designed By <i class="fa fa-heart" style="color: #fff;"></i> SOLOMON <i class="fa fa-heart" style="color: #fff;"></i> TOWOLAWI <i class="fa fa-heart" style="color: #fff;"></i> and <i class="fa fa-heart" style="color: #fff;"></i> ISREAL(javascript) <i class="fa fa-heart" style="color: #fff;"></i></p>
+      <p>Built with ❤ using HTML, CSS & JavaScript</p>
+       <p>Version 1.0 | <a href="#top" style="color: white; text-decoration: underline;">Back to top ↑</a></p>
 
+       </div>
+    </footer>
 
-    }
-</script>
- 
     <script src="script.js"></script>
+    <script>
+        /*
+       window.addEventListener("load", function() {
+        setTimeout(() => {
+ document.body.classList.add("fade-in");
+       }, 100)
+        })
+       */
+    </script>
 </body>
 </html>
