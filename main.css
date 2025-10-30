@@ -489,6 +489,7 @@ li a:hover {
  }
  .tooltip i {
   font-size: 30px;
+     color: #fff;
   transition: 0.5s;
  }
  .tooltip i:hover {
@@ -500,3 +501,4 @@ li a:hover {
   align-items: center;
   margin-top: 20px;
  }
+
