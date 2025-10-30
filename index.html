@@ -1,26 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>SoloVibe</title>
-   <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
- <meta name="author" content="Towolawi Solomon">
- <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo. The best and free website for exploring music online. 100% fre😍😎😎🥰🥰😘😛</title>
+  <script src="script.js" defer></script>
+  <link rel="icon" href="IMG-20251007-WA0080 (1).jpg" type="image/png" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+   <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
    <meta name="og:image" content="IMG-20251007-WA0080 (1).jpg">
- <meta property="og:site_name" content="SoloVibe"/>
- <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
+ <meta name="author" content="Towolawi Solomon">
+ <meta property="og:site_name" content="SoloVibe">
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .error {
+            color: red;
+            position: absolute;
+            bottom: -13px;
+            margin-bottom: 3px;
+        }
+        @media all and (max-width: 380px) {
+          .error {
+            margin-bottom: 1px;
+          
+          }
+          .option {
+            margin-top: 8px;
+          }
+        }
+        #preloader {
+    transition: opacity 3s ease-in-out;
+    opacity: 1;
+}
+    </style>
 </head>
 <body>
+  <div class="container">
    <div class="wrapper login">
          <form action="" onsubmit="return validateForm()">
         <div class="heeader">
@@ -29,15 +51,16 @@
         </div>
         <div class="input-section">
               <label for="Usern" class="label">Username</label>
-              <input type="text" name="" id="Usern"  placeholder="Enter Your Username" class="input-field" required>
-               <i class="fa fa-user"></i>
+              <input type="text" name="" id="Usern"  placeholder="Enter Your Username" class="input-field" required autocomplete="username">
+             <i class="fas fa-user"></i>
+               <p class="error" id="usererror"></p>
         </div>
           <div class="input-section">
               <label for="psw"  class="label">Password</label>
-              <input type="password" name="" placeholder="Enter Your Password" id="psw" class="input-field"  required>
-               <i class="fa fa-lock"></i>
-                <span class="fa fa-eye-slash" id="toggleIcon" onclick="toggleVisibilty()"></span> 
-               
+              <input type="password" name="" placeholder="Enter Your Password" id="psw" class="input-field"  required autocomplete="current-password">
+               <i class="fas fa-lock"></i>
+                <span class="fas fa-eye-slash" id="toggleIcon" onclick="toggleVisibilty()"></span> 
+                 <p class="error" id="passError"></p>
         </div>
         <div class="option">
             <div class="one">
@@ -48,52 +71,119 @@
         <div class="submit-button">
             <input type="submit" value="Login" class="submit">
         </div>
-        <div id="errormessage"   style="color: red;">
-        </div>
      <div class="login-link">
        <p>Don't have an account?</p> <a href="register.html">Register here</a>
      </div>
  </form>
+    </div>
+    </div>
+     <footer>
+      <div class="footer-content" >
+        <div class="footer-colum" id="about">
+          <h3>ABOUT SoloVibe</h1>
+    <p>SOLO. Your trusted website where you browse, explore music for free</p>
+    <p>We provide beginner-friendly tutorials and advanced 
+        techniques to help you navigate the world of MUSIC and many more(pending).</p>
+    </div>
+         <div class="footer-column" id="em">
+                <h3>Connect With Us</h3>
+                <p>Subscribe to our newsletter for the latest guides and updates:</p>
+                <div class="search-container" id="em" style="margin: 1rem 0;">
+                  <form action="https://chat.whatsapp.com/Ejrnyl7oaJTA9uI4jgs9cj?mode=ems_copy_t" method="post"  target="_blank">
+                    <input type="tel" placeholder="+234816516******" name="number" maxlength="13" class="input-field" autocomplete="off" >
+                    <input type="submit" value="Send" class="submit">
+                    </form>
+                   </div>
+                <div class="social-icons">
+                    <div class="tooltip">
+                    <a href="https://www.facebook.com/profile.php?id=61582307954636" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://wa.link/08urey" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://t.me/Timmzzyy"  target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://www.tiktok.com/@solomondamilare18" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+       <div class="copy">
+      <p>&copy; copyright <span id="years"></span> SoloVibe, All rights reserved. Designed By <i class="fa fa-heart" style="color: #fff;"></i> SOLOMON <i class="fa fa-heart" style="color: #fff;"></i> TOWOLAWI <i class="fa fa-heart" style="color: #fff;"></i> and <i class="fa fa-heart" style="color: #fff;"></i> ISREAL(javascript) <i class="fa fa-heart" style="color: #fff;"></i></p>
+      <p>Built with ❤ using HTML, CSS & JavaScript</p>
+       <p>Version 1.0 | <a href="#top" style="color: white; text-decoration: underline;">Back to top ↑</a></p>
+
+       </div>
+    </footer>
+
+     <div class="loader" id="loader" style="display: none;" >
+      <div class="load"></div>
+     <h1>Welcome to SoloVibe</h1>
+     <p>Loading Your EXperience</p>
     </div>
    <script>
      function validateForm() {
       event.preventDefault();
       const username = document.getElementById("Usern").value.trim();
         const password = document.getElementById("psw").value.trim();
-        const error = [];
+          const usererror = document.getElementById("usererror");
+           const passError = document.getElementById("passError");
         const remember = document.getElementById("chk").checked;
          const user = JSON.parse(localStorage.getItem(username));
-
+   usererror.textContent = "";
+   passError.textContent = "";
+   let isValid = true;
+        
          if(username.length < 3) {
-   error.push("Your username sholud be atleast 3 character long");
+       usererror.textContent = "Ooopx! Wrong Username, try again"
+       isValid = false;
          }
-         const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+         const passwordPattern =  /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,}$/;
          if(!passwordPattern.test(password)) {
-          error.push("Your password should contian numbers and alphabet, and be at least 8 characters long");
+         passError.textContent = "Ooopx! Wrong password, try again";
+         }else if(password.length < 3) {
+            passError.textContent = "Ooopx! Wrong password. try again"
          }
-            const errordiv = document.getElementById("errormessage");
-      if (error.length> 0) {
-        errordiv.innerHTML = error.join("<br>");
-        return false;
-}
+       
 if (remember) {
   localStorage.setItem("savedUsername", username); 
 } else {
   localStorage.removeItem("savedUsername");
 }
 
-     
-      errordiv.innerHTML = "";
   if (user && user.password === password) {
         localStorage.setItem("loggedInUser", username);
           alert("Login successful!");
-       window.location.href = "main.html"
+            document.getElementById("loader").style.display = "flex";
+    setTimeout(() => {
+               window.location.href = "main.html"
+    }, 2000)  
  document.getElementById("usernameDisplay").innerText = user.username;
      }else {
-        alert("Invalid email or password.");
+       passError.textContent = "Incorrect password"
       }
        return false;
     }
+
+    
    </script>
+   <script>
+   window.addEventListener("load", () => {
+    const loader = document.getElementById("preloader");
+    loader.style.opacity = "0";
+    setTimeout(() => {
+        loader.style.display = "none";
+}, 2000);
+});
+
+
+   </script>
+   <div class="loader" id="preloader" >
+      <div class="load"></div>
+     <h1>Welcome to SoloVibe</h1>
+     <p>Loading Your EXperience</p>
+    </div>
 </body>
 </html>
