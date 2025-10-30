@@ -1,29 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <script src="script.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoloVibe</title>
-   <meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
- <meta name="author" content="Towolawi Solomon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo. The best and free website for exploring music online. 100% fre😍😎😎🥰🥰😘😛</title>
+  <link rel="icon" href="IMG-20251007-WA0080 (1).jpg" type="image/png" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+   <link rel="shortcut icon" href="IMG-20251007-WA0080 (1).jpg" type="image/x-icon" />
    <meta name="og:image" content="IMG-20251007-WA0080 (1).jpg">
- <meta property="og:site_name" content="SoloVibe"/>
+<meta name="description" content="Enjoy Smart Short Clips music online.100% free 😍😎😎🥰🥰😘😛" />
+ <meta name="author" content="Towolawi Solomon">
+ <meta property="og:site_name" content="SoloVibe">
  <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-    <link rel="icon" href="Copilot_20250628_195908.png">
-    <link rel="stylesheet" href="service.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="IMG-20251007-WA0080 (1).jpg">
+    <link rel="stylesheet" href="service.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 1s ease-out;
+  visibility: hidden;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+    </style>
 </head>
 <body>
       <nav>
-        <div class="nav">
-            <div class="logo">
+        <div class="nav fade-in-section">
+            <div class="logo fade-in-section">
                 <a href="main.html" >
                       <img src="IMG-20251007-WA0080 (1).jpg" alt="" style="width: 40px;height: auto;" class="img">
                    <h1>SoloVibe</h1>
@@ -31,20 +46,20 @@
             </div>
             <div class="nav-link" id="navMenu">
                 <ul>
-                    <li><a href="main.html" >Home</a></li>
+                    <li><a href="#" onclick="Home()">Home</a></li>
                        <li><a href="service.html" class="active">Service</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" onclick="Contact()">Contact</a></li>
                 </ul>
             </div> 
             <div class="mobile-menu">
-                <i class="fa fa-bars" onclick="Shownav()"></i>
+                <i class="fas fa-bars" onclick="Shownav()"></i>
             </div>
         </div>
-         <main class="main">
+         <main class="main fade-in-section">
         <header>
          <h1> Service</h1> 
         </header>
-        <section class="section">
+        <section class="section fade-in-section">
         <p class="p">SoloVibe Your trusted website where you browse, explore music for free,
             We provide beginner-friendly tutorials and advanced,
             techniques to <br>
@@ -58,131 +73,177 @@
         </article>
     </main>
 </nav>
-<div class="container">
-    <div class="blog-grid">
-        <article class="blog-card">
-          <div class="blog-img">
+<div class="container fade-in-section">
+    <div class="blog-grid fade-in-section">
+        <article class="blog-card fade-in-section">
+          <div class="blog-img fade-in-section">
             <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx">
           </div>
-          <div class="content">
-          <div class="type">
+          <div class="content fade-in-section">
+          <div class="type fade-in-section">
             <span >SoloVibe</span>
             </div>
             <h2>Artist Promotion</h2>
              <p>Boost your favourite music career with our tailored marketing and promotion services</p>
           </div>
-          <div class="meta">
+          <div class="meta fade-in-section">
             <span>October 29, 2025</span>
           
-          <div class="author">
-            <img src="IMG-20250527-WA0025.jpg" alt="author">
+          <div class="author fade-in-section">
+            <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="author">
             <span>Solomon</span>
           </div>
           </div>
         </article>
 
-          <article class="blog-card">
-          <div class="blog-img">
+          <article class="blog-card fade-in-section">
+          <div class="blog-img fade-in-section">
             <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx">
           </div>
-          <div class="content">
-          <div class="type">
+          <div class="content fade-in-section">
+          <div class="type fade-in-section">
             <span>SoloVibe</span>
             </div>
             <h2>Playlist and Curation</h2>
              <p>Discover and enjoy expertly crafted playlist for every mood and genre</p>
           </div>
-          <div class="meta">
+          <div class="meta fade-in-section">
             <span>October 29, 2025</span>
           
-          <div class="author">
-            <img src="IMG-20250527-WA0025.jpg" alt="author">
-            <span>Solomon</span>
+          <div class="author fade-in-section">
+            <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="author">
+            <span class="fade-in-section">Solomon</span>
           </div>
           </div>
         </article>
-          <article class="blog-card">
-          <div class="blog-img">
-            <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx">
+          <article class="blog-card fade-in-section">
+          <div class="blog-img fade-in-section">
+            <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx fade-in-section">
           </div>
-          <div class="content">
-          <div class="type">
+          <div class="content fade-in-section">
+          <div class="type fade-in-section">
             <span >SoloVibe</span>
             </div>
             <h2>Events and Concerts</h2>
              <p>Stay updated on live shows, concerts, and exclusive music event near you.</p>
           </div>
-          <div class="meta">
+          <div class="meta fade-in-section">
             <span>October 29, 2025</span>
           
-          <div class="author">
-            <img src="IMG-20250527-WA0025.jpg" alt="author">
-            <span>Solomon</span>
+          <div class="author fade-in-section">
+            <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="author">
+            <span >Solomon</span>
           </div>
           </div>
         </article>
-          <article class="blog-card">
-          <div class="blog-img">
+          <article class="blog-card fade-in-section">
+          <div class="blog-img fade-in-section">
             <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx">
           </div>
-          <div class="content">
-          <div class="type">
+          <div class="content fade-in-section">
+          <div class="type fade-in-section">
             <span >SoloVibe</span>
             </div>
             <h2>Productive tips</h2>
              <p>Learn pro techniques and tutorials  to vreate your own amazing traks</p>
           </div>
-          <div class="meta">
+          <div class="meta fade-in-section">
             <span>October 29, 2025</span>
           
-          <div class="author">
-            <img src="IMG-20250527-WA0025.jpg" alt="author">
+          <div class="author fade-in-section">
+            <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="author">
             <span>Solomon</span>
           </div>
           </div>
         </article>
-          <article class="blog-card">
-          <div class="blog-img">
+          <article class="blog-card fade-in-section">
+          <div class="blog-img fade-in-section">
             <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx">
           </div>
-          <div class="content">
-          <div class="type">
+          <div class="content fade-in-section">
+          <div class="type fade-in-section">
             <span >SoloVibe</span>
             </div>
             <h2>Custom Mixtapes</h2>
              <p>Get personalizedmixtapes made just for you or your brand </p>
           </div>
-          <div class="meta">
+          <div class="meta fade-in-section">
             <span>October 29, 2025</span>
           
-          <div class="author">
-            <img src="IMG-20250527-WA0025.jpg" alt="author">
+          <div class="author fade-in-section">
+            <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="author">
             <span>Solomon</span>
           </div>
           </div>
         </article>
-          <article class="blog-card">
-          <div class="blog-img">
-            <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx">
+          <article class="blog-card fade-in-section">
+          <div class="blog-img fade-in-section">
+            <img src="IMG-20251009-WA0011.jpg" alt="blog" class="imgx fade-in-section">
           </div>
-          <div class="content">
-          <div class="type">
+          <div class="content fade-in-section">
+          <div class="type fade-in-section">
             <span >SoloVibe</span>
             </div>
             <h2>Licensing</h2>
              <p>Simplify music rights and Licensing to project just your work and moneytize better</p>
           </div>
-          <div class="meta">
+          <div class="meta fade-in-section">
             <span>October 29, 2025</span>
           
-          <div class="author">
-            <img src="IMG-20250527-WA0025.jpg" alt="author">
+          <div class="author fade-in-section">
+            <img src="WhatsApp Image 2025-09-28 at 18.00.35.jpeg" alt="author">
             <span>Solomon</span>
           </div>
           </div>
         </article>
     </div>
 </div>
- 
+ <div class="loader fade-in-section" id="loader" style="display: none;" >
+      <div class="load"></div>
+     <h1>Welcome to SoloVibe</h1>
+     <p>Loading Your EXperience</p>
+    </div>
+    <footer>
+      <div class="footer-content" >
+        <div class="footer-colum fade-in-section" id="about">
+          <h3>ABOUT SoloVibe</h1>
+    <p>SOLO. Your trusted website where you browse, explore music for free</p>
+    <p>We provide beginner-friendly tutorials and advanced 
+        techniques to help you navigate the world of MUSIC and many more(pending).</p>
+    </div>
+         <div class="footer-column fade-in-section" id="em" >
+                <h3>Connect With Us</h3>
+                <p>Subscribe to our newsletter for the latest guides and updates:</p>
+                <div class="search-container" id="em" style="margin: 1rem 0;">
+                  <form action="https://chat.whatsapp.com/Ejrnyl7oaJTA9uI4jgs9cj?mode=ems_copy_t" method="post"  target="_blank">
+                    <input type="tel" placeholder="+234816516******" name="number" maxlength="13" class="input-field" autocomplete="off" required >
+                    <input type="submit" value="Send" class="submit">
+                    </form>
+                   </div>
+                <div class="social-icons fade-in-section">
+                    <div class="tooltip">
+                    <a href="https://www.facebook.com/profile.php?id=61582307954636" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://wa.link/08urey" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://t.me/Timmzzyy"  target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                    <div class="tooltip">
+                    <a href="https://www.tiktok.com/@solomondamilare18" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+       <div class="copy fade-in-section">
+      <p>&copy; copyright <span id="years"></span> SoloVibe, All rights reserved. Designed By <i class="fa fa-heart" style="color: #fff;"></i> SOLOMON <i class="fa fa-heart" style="color: #fff;"></i> TOWOLAWI <i class="fa fa-heart" style="color: #fff;"></i> and <i class="fa fa-heart" style="color: #fff;"></i> ISREAL(javascript) <i class="fa fa-heart" style="color: #fff;"></i></p>
+      <p>Built with ❤ using HTML, CSS & JavaScript</p>
+       <p>Version 1.0 | <a href="#top" style="color: white; text-decoration: underline;">Back to top ↑</a></p>
+
+       </div>
+    </footer>
+
+ <script src="script.js" ></script>
 </body>
 </html>
